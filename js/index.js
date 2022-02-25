@@ -56,5 +56,5 @@ function Login(){
 	usuario=document.getElementById('usuario').value;
 	console.log(usuario);
 
-	
+	windows.location.href=""
 }
