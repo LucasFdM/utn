@@ -1,0 +1,155 @@
+/*
+*{
+	margin:  0;
+	padding:  0;
+
+}
+
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+
+}
+
+.header{
+	background-color: rgb(110, 110, 236);
+	color: #FFF; 
+	height: 80px;
+	width: 85vw;
+	margin-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+.logo{
+	text-transform: uppercase;
+}
+
+.logo a{
+	color: #FFF;
+	text-decoration: none;
+}
+
+.navbar{
+	background-color: rgb(177, 186, 224);
+	color: #FFF;
+	width: 85vw;
+	height: 70px;
+	margin: auto;
+}
+
+.navbar ul{
+	text-align: center;
+}
+
+.navbar ul li{
+	display: inline-block;
+}
+
+.navbar ul li a{
+	text-decoration: none;
+	display: block;
+	padding: 25px;
+	color: #FFF;
+}
+
+.navbar ul li a:hover{
+	color: blue;
+}
+
+#mainContent{
+	width: 85vw;
+	margin: auto;
+}
+
+#portada{
+	width: 78%;
+	background-color: grey;
+	padding: 1.6em;
+	box-sizing: border-box;
+}
+
+.destacado, .default{
+	background-color: #0FF;
+	padding: 0.7em;
+}
+
+.destacado{
+	margin-bottom: 0.em;
+}
+
+.default{
+	box-sizing: border-box;
+	width: 50%;
+	float: left;
+}
+
+.imgNota img{
+	width: 100%;
+}
+
+footer{
+	clear: both;
+	background-color: #F0F;
+	color: FFF;
+	text-align: center;
+	padding: 15px;
+	font-size: 14px;
+}
+
+
+body{
+	text-align: center;
+}
+
+#formContacto{
+	border-radius: 15px;
+	margin: 1em 0 2em 0;
+}
+
+#formContacto input, 
+#formContacto select, 
+#formContacto textarea{
+	width: 100%;
+	padding: 0.6em;
+	margin-bottom: 1em;
+	box-sizing: border-box;
+	border-radius: 5px;
+}
+
+#formContacto input[type="submit"]:hover{
+	background-color: #CAC;
+	color: #000;
+}
+
+#formContacto input[type="submit"]{
+	width: 50%;
+	align-content: center;
+}
+
+#formContacto input: focus{
+	background-color: #ABC;
+}
+
+#formContacto input: valid{
+	border: 2px solid green;	
+}
+
+#formContacto input: invalid{
+	border: 2px dashed red;
+}
+
+@media screen and (min-width:  990px) and (max-width:  1200px){
+	body{
+		background-color: red;
+	}
+}
+
+@media screen and (min-width:  660px) and (max-width:  989px){
+	body{
+		background-color: green;
+	}
+}
+
+*/

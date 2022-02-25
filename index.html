@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/index.css">
+    
+    <title>LucasFM | Diseño Web</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <header>
+            <div class="bg-dark py-4 text-left">
+                <a href="#" class="bg-success text-dark p-3 lead" id="home">LucasFM</a>
+                <ul class="nav nav-tabs justify-content-end">
+                    <li class="nav-item"><a data-scroll class="nav-link text-success" href="#home">Home</a></li>
+                    <li class="nav-item"><a data-scroll class="nav-link text-success" href="#servicios">Servicios</a></li>
+                    <li class="nav-item"><a data-scroll class="nav-link text-success" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a data-scroll class="nav-link text-success" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </header>
+        <section class="bg-success text-center py-5">
+            <h1 class="display-4 pt-5">Programacion Web</h1>
+            <h2 class="display2">HTML5 + CSS3 + Jaascript</h2>
+            <p class="lead">Programación de sitios web personales y empresariales. <br> Diseño responsivo adaptable 
+                a todo tipo de pantallas. <br> Estilos con Framework Bootstrap. </p>
+            <div class="pt-2 pb-5">
+                <a class="bg-dark text-success p-3" href="#contacto">Contactame</a>
+            </div>
+        </section>
+        <section id="servicios">
+            <div class="row py-5 my-5">
+                <div class="col-md-4">
+                    <h3 class="text-right">HTML 5</h3>
+                    <hr>
+                    <img src="images/1.jpg" alt="" class="img-fluid rounded">
+                    <p class="text-justify">HTML, siglas en inglés de HyperText Markup Language, hace referencia al lenguaje de marcado para la 
+                    elaboración de páginas web. Es un estándar que sirve de referencia del software que conecta con la 
+                    elaboración de páginas web en sus diferentes versiones, define una estructura básica y un código para 
+                    la definición de contenido de una página web, como texto, imágenes, videos, juegos, entre otros.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="text-right">CSS 3</h3>
+                    <hr>
+                    <img src="images/2.jpg" alt="" class="img-fluid rounded">
+                    <p class="text-justify">CSS siglas en español «Hojas de estilo en cascada», es un lenguaje de diseño gráfico para definir y 
+                    crear la presentación de un documento estructurado escrito en un lenguaje de marcado. Es muy usado para 
+                    establecer el diseño visual de los documentos web, e interfaces de usuario escritas en HTML. Es una 
+                    tecnología usada para crear páginas visualmente atractivas.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="text-right">Javascript</h3>
+                    <hr>
+                    <img src="images/3.jpg" alt="" class="img-fluid rounded">
+                    <p class="text-justify">JavaScript es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define 
+                    como orientado a objetos,2​ basado en prototipos, imperativo, débilmente tipado y dinámico. Se utiliza 
+                    principalmente del lado del cliente, implementado como parte de un navegador web permitiendo mejoras en 
+                    la interfaz de usuario y páginas web dinámicas</p>
+                </div>
+            </div>
+        </section>
+        <section id="portfolio" class="py-3 my-5">
+            <div id="carouselPortfolio" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselPortfolio" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselPortfolio" data-slide-to="1"></li>
+                  <li data-target="#carouselPortfolio" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="images/port0.JPG" class="d-block w-100 h-50" alt="Mercadolibre">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Tienda Online</h5>
+                      <p>Diseño adaptable de tienda online, con carrito de compras y plataforma de pagos</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/port1.JPG" class="d-block w-100 h-50" alt="UTN">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Sitio Web Educativo</h5>
+                      <p>Acceso a usuarios, bases de datos y carga de formularios</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/port2.JPG" class="d-block w-100 h-50" alt="Youtube">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Plataforma de Videos</h5>
+                      <p>Carga de archivos, acceso a usuarios, integracion con redes sociales</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-target="#carouselPortfolio" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-target="#carouselPortfolio" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Siguiente</span>
+                </button>
+              </div>
+        </section>
+        <section id="contacto">
+            <div class="card">
+                <div class="card-body">
+                    <form>
+                        <div class="row">
+                            <div class="form-group col-12">
+                                <label for="input1">Nombre y Apellido</label>
+                                <input type="text" class="form-control" id="input1" placeholder="Ingrese su nombre" >
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label for="input2">Direccion de E-Mail</label>
+                                <input type="email" class="form-control" id="input2" placeholder="nombre@gmail.com">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="input3">Telefono</label>
+                                <input type="tel" class="form-control" id="input3" placeholder="12345678">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-12">
+                                <label for="input4">Motivo de la Consulta</label>
+                                <select class="form-control" id="input4">
+                                <option>Solicitar presupuesto para diseño web</option>
+                                <option>Consulta sobre los servicios</option>
+                                <option>Otras consultas</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-12>
+                        <label for="input5">Mensaje</label>
+                        <textarea class="form-control" id="input5" rows="3"></textarea>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </section>
+        <footer class="bg-dark text-center py-4">
+            <a href="#" class="text-white">Todos los derechos reservados</a>
+        </footer>
+    </div>
+
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    <!-- Scroll -->
+    <script src="./js/smooth-scroll.min.js"></script>
+    <script>
+    // All animations will take exactly 500ms
+    var scroll = new SmoothScroll('a[href*="#"]', {
+        speed: 500,
+        speedAsDuration: true
+    });
+    </script>
+    <script src="./js/index.js"></script>
+
+
+    
+</body>
+</html> 
+    
