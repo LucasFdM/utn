@@ -29,26 +29,40 @@
             </div>
         </header>
     <div class="container-fluid">
-        <h1><i class="bi bi-user"></i>Servicios Exclusivos</h1>
+        <h1><i class="bi bi-user"></i>Base de Datos</h1>
         <hr>
-        <p>¡Bienvenido! Seleccione la operación que desea realizar:</p>
+        <p>Estructura de la Base de Datos del Sistema:</p>
 
         <div class="row">
             <div class="col-6">
-                <button class="btn btn-success" onclick="iniciar()">Iniciar Calculo</button>
-                <button class="btn btn-warning" onclick="sum()">Sumar</button>
-                <button class="btn btn-warning" onclick="res()">Restar</button>
-                <button class="btn btn-warning" onclick="mul()">Multiplicar</button>
-                <button class="btn btn-warning" onclick="div()">Dividir</button>
+                <pre>
+                    <code>
+                        CREATE DATABASE utn;
+
+                        CREATE TABLE usuario(
+                            nameUser varchar(50) primary key,
+                            password varchar(20),
+                            email varchar(100),
+                            nombre varchar (100),
+                            pedidoServicios integer,
+                            foreign key (pedidoServicios) references servicio(id),
+                        );
+
+                        CREATE TABLE servicio(
+                            id integer primary key,
+                            nombre varchar(100),
+                            descripcion varchar(250),
+                            precio float,
+                        );
+
+                    </code>
+                </pre>
             </div>
             <div class="col-6 align-content-end">
-            <button class="btn btn-success" onclick="Calculo()">Calcular Mayor y Menor</button>
+            
             <br>
             </div>
             <div class="col-12">
-                <br>
-                <h2 id="resultado"></h2>
-                <hr>
             </div>
         </div>
     </div>
