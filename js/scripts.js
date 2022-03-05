@@ -48,7 +48,7 @@ function Login(){
 		if(user==usuario && pass==password){
 			alert("¡Login Correcto! Bienvenido.");
 			flag=true;
-			window.open('/pages/ejercicio2.html');
+			window.open('/utn/ejercicio2.html');
 		} 
 		else{
 			alert("¡Usuario o Contraseña incorrectos! Intente nuevamente...");
