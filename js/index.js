@@ -1,7 +1,7 @@
 console.log('[[[ Sistema Iniciado Correctamente ]]]');
 
 //Variables 
-let num1, num2, r=0;
+let num1, num2, r=0, mayor, menor;
 let usuario="administrador", password="1234";
 let flag=false;
 
@@ -14,28 +14,30 @@ function iniciar(){
 
 }
 
-function sum(r){
+function sum(){
 	r=num1+num2;
 	console.log(r);
+	document.getElementById("resultado").innerHTML="El resultado es: " + r;
 }
 
-function res(r){
+function res(){
 	r=num1-num2;
 	console.log(r);
+	document.getElementById("resultado").innerHTML="El resultado es: " + r;
 }
 
-function mul(r){
+function mul(){
 	r=num1*num2;
 	console.log(r);
+	document.getElementById("resultado").innerHTML="El resultado es: " + r;
 }
 
-function div(r){
+function div(){
 	r=num1/num2;
 	console.log(r);
+	document.getElementById("resultado").innerHTML="El resultado es: " + r;
+	
 }
-
-let resultado = document.getElementById("resultado");
-resultado.innerHTML="El resultado es: " + r;
 
 //Fucion Login
 function Login(){
@@ -66,24 +68,14 @@ function Calculo(){
 			alert("Hay numeros iguales, por favor ingrese numeros distintos");
 		}
 		else{
-			if(n1>n2){
-				if(n3>n1){
-					alert("El Menor numero es: "+n2+ " y el Mayor numero es: "+n3);
-				}
-				else{
-					alert("El Menor numero es: "+n3+ " y el Mayor numero es: "+n1);
-				}
-			}
-			else{
-				if(n3>n2){
-					alert("El Menor numero es: "+n1+ " y el Mayor numero es: "+n3);
-				}
-				else{
-					alert("El Menor numero es: "+n1+ " y el Mayor numero es: "+n2);
-				}
-			}
-		flag=true;
+			mayor= Math.max(n1,n2,n3);
+			menor= Math.min(n1,n2,n3);
+			alert("El Menor es: "+menor+" y el Mayor es: "+mayor);
+			flag=true;
 		}
 	}
 }
 
+function Contacto(){
+	alert("Muchas gracias por contactarte. Responderé a la brevedad.");
+}

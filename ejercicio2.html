@@ -24,31 +24,35 @@
                     <li class="nav-item"><a data-scroll class="nav-link text-success" href="index.html#servicios">Servicios</a></li>
                     <li class="nav-item"><a data-scroll class="nav-link text-success" href="index.html#portfolio">Portfolio</a></li>
                     <li class="nav-item"><a data-scroll class="nav-link text-success" href="index.html#contacto">Contacto</a></li>
-                    <li class="nav-item"><a data-scroll class="nav-link bg-warning text-dark" onclick="Login()">Cerrar Sesión</a></li>
+                    <li class="nav-item"><a data-scroll class="nav-link bg-warning text-dark" href="index.html#home">Cerrar Sesión</a></li>
                 </ul>
             </div>
         </header>
     <div class="container-fluid">
-        <h1><i class="bi bi-user"></i>Servicios Exclusivos</h1>
+        <h1><i class="bi bi-user"></i>Javascript</h1>
         <hr>
-        <p>¡Bienvenido! Seleccione la operación que desea realizar:</p>
+        <h3>Functions y Console.log</h3>
+        <p>Seleccione la operación que desea realizar:</p>
 
         <div class="row">
-            <div class="col-6">
-                <button class="btn btn-success" onclick="iniciar()">Iniciar Calculo</button>
-                <button class="btn btn-warning" onclick="sum()">Sumar</button>
-                <button class="btn btn-warning" onclick="res()">Restar</button>
-                <button class="btn btn-warning" onclick="mul()">Multiplicar</button>
-                <button class="btn btn-warning" onclick="div()">Dividir</button>
+            <div class="col-xs-12 col-md-6">
+                <button class="btn btn-lg btn-success" onclick="iniciar()">Iniciar Calculo</button>
+                <button class="btn btn-lg btn-warning" onclick="sum()">Sumar</button>
+                <button class="btn btn-lg btn-warning" onclick="res()">Restar</button>
+                <button class="btn btn-lg btn-warning" onclick="mul()">Multiplicar</button>
+                <button class="btn btn-lg btn-warning" onclick="div()">Dividir</button>
             </div>
-            <div class="col-6 align-content-end">
-            <button class="btn btn-success" onclick="Calculo()">Calcular Mayor y Menor</button>
+            <div class="col-xs-12 col-md-6 align-content-end">
+            <button class="btn btn-lg btn-success btn-block" onclick="Calculo()">Calcular Mayor y Menor</button>
             <br>
             </div>
-            <div class="col-12">
+            <div class="col-12 text-center mb-5">
                 <br>
                 <h2 id="resultado"></h2>
                 <hr>
+            </div>
+            <div class="btn btn-warning btn-block m-3 p-3">
+                <a href="ejercicio3.html">Ver Ejercicio N°3</a>
             </div>
         </div>
     </div>
