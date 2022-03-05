@@ -78,4 +78,5 @@ function Calculo(){
 
 function Contacto(){
 	alert("Muchas gracias por contactarte. Responderé a la brevedad.");
+	console.log('Mensaje recibido');
 }
