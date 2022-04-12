@@ -1,0 +1,37 @@
+{{> header}}
+<section>
+    <h1 class="mt-4"><i class="bi bi-user"></i>Administrador</h1>
+    <hr>
+    <h3>Panel de Administración</h3>
+    <hr>
+    <h5>Gestión de Mensajes, Usuarios y Servicios</h5>
+    <br>   
+    <table class="table table-hover table-bordered table-dark" id="msjTable">
+        <thead>
+            <tr>
+                <th scope="col">N°</th>
+                <th scope="col">Nombre y Apellido</th>
+                <th scope="col">E-Mail</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Motivo</th>
+                <th scope="col">Mensaje</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each results}}
+            <tr>
+                <th scope="row"> {{mensajeId}} </th>
+                <td> {{mensajeName}} </td>
+                <td> {{mensajeEmail}} </td>
+                <td> {{mensajeTel}} </td>
+                <td> {{mensajeSubject}} </td>
+                <td> {{mensajeMessage}} </td>
+                <td> 
+                    <a href="javascript:void(0)" class="btn btn-danger delete" data-id="{{mensajeId}}">Borrar</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</section>

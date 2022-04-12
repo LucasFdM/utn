@@ -59,11 +59,6 @@ function Calculo(){
 	}
 }
 
-function Contacto(){
-	alert("Muchas gracias por contactarte. Responderé a la brevedad.");
-	console.log('Mensaje recibido');
-}
-
 //Funcion Login Administrador
 function Login(){
 	console.log('Iniciando Login');
@@ -74,7 +69,7 @@ function Login(){
 			console.log('Usuario y Contraseña correctos');
 			alert("¡Login Correcto! Bienvenido.");
 			flag=true;
-			window.open('maths');
+			window.open('admin');
 		} 
 		else{
 			alert("¡Usuario o Contraseña incorrectos! Intente nuevamente...");

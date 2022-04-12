@@ -26,7 +26,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form class="form-signin">
+                    <form action="login" class="form-signin" method="post">
                         <label for="inputEmail2">E-mail</label>
                         <input type="email" id="inputEmail2" name="email" class="form-control" placeholder="nombre@mail.com" required autofocus>
                         <label for="inputPassword">Contraseña</label>
@@ -36,10 +36,14 @@
                                 <input type="checkbox" value="remember-me"> Recordarme
                             </label>
                         </div>
+                        <br>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Acceder</button>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Acceder</button>
+                    <div class="text-center validate">
+                        <h2 class="text-danger">
+                            {{validate}}
+                        </h2>
+                    </div>
                 </div>
             </div>
         </div>
@@ -55,7 +59,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="access" class="form-signin" method="post">
+                    <form action="logon" class="form-signin" method="post">
                         <label for="inputNameUser">Nombre de Usuario</label>
                         <input type="text" id="inputNameUser" name="nameUser" class="form-control" required autofocus>
                         <label for="inputPassword">Contraseña</label>
@@ -64,15 +68,14 @@
                         <input type="email" id="inputEmail" name="email" class="form-control" placeholder="nombre@mail.com" required>
                         <label for="inputName">Nombre Completo</label>
                         <input type="text" id="inputName" name="name" class="form-control" required>
+                        <br>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Registrarse</button>
                     </form>
                     <div class="text-center validate">
                         <h2 class="text-danger">
                             {{validate}}
                         </h2>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Registrarse</button>
                 </div>
             </div>
         </div>

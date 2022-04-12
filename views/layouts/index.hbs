@@ -16,7 +16,9 @@
     <!-- Code -->
     <link rel="stylesheet" href="./css/prism.css">
     
-    <title>LucasFM | Diseño Web</title>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <title>LucasFM | {{ titulo }}</title>
 </head>
 <body>
     <div class="container-fluid">
@@ -33,6 +35,26 @@
         offset: 75
     });
     </script>
+    {{!-- <script>
+    Swal.fire({
+            title: 'Test modal with input',
+            html: 'custom <strong>content</strong>',
+            input: 'text',
+            icon: 'success',
+            showCloseButton: true,
+            showCancelButton: true,
+            preConfirm: function (value) {
+                if (!value) {
+                    Swal.showValidationMessage('Should not be empty!')
+                }
+            },
+            didOpen: function (modal) {
+                console.log(modal)
+            },
+        }).then(function (result) {
+            console.log(result)
+        })
+    </script> --}}
 </body>
 </html> 
     

@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
-
+const Swal = require('sweetalert2');
 // Routes
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
@@ -27,27 +27,69 @@ app.get('/', (req,res)=>{
 })
 
 app.get('/index', (req,res)=>{
-    res.render("main");
+    res.render("main", {
+        titulo: 'Diseño Web',
+    });
 })
 
 app.get('/maths', (req,res)=>{
-    res.render("maths");
+    res.render("maths", {
+        titulo: 'Calculos',
+    });
 })
 
 app.get('/data', (req,res)=>{
-    res.render("data");
-})
-
-app.get('/access', (req,res)=>{
-    res.render("access");
+    res.render("data", {
+        titulo: 'Base de Datos',
+    });
 })
 
 app.get('/prices', (req,res)=>{
-    res.render("prices");
+    res.render("prices", {
+        titulo: 'Tarifas',
+    });
+})
+
+app.get('/access', (req,res)=>{
+    res.render("access", {
+        titulo: 'Acceder',
+    });
+})
+
+app.get('/admin', (req,res)=>{
+    res.render("admin", {
+        titulo: 'Area Administrador',
+    });
+})
+
+app.get('/user', (req,res)=>{
+    res.render("user", {
+        titulo: 'Area Usuario',
+    });
+})
+
+app.get('/logon', (req,res)=>{
+    res.render("user", {
+        titulo: 'Area Usuario',
+    });
+})
+
+app.get('/login', (req,res)=>{
+    res.render("user", {
+        titulo: 'Area Usuario',
+    });
+})
+
+app.get('/contact', (req,res)=>{
+    res.render("main", {
+        titulo: 'Programacion Webon',
+    });
 })
 
 app.get('*', (req,res)=>{
-    res.render("404");
+    res.render("404", {
+        titulo: 'ERROR',
+    });
 })
 
 // Database
@@ -66,8 +108,28 @@ connection.connect((error) =>{
     console.log('Conexion a la DB exitosa');
 });
 
+// LogIn
+app.post('/login',(req,res)=>{
+
+    const{email, password} = req.body;
+
+    if(email == '' || password == ''){
+        let validate= 'Ingrese los datos Requeridos';
+        console.log('Error al ingresar');
+        
+        res.render('access', {
+            validate
+        })
+    }
+    else{
+        res.render('user', {
+        });
+        console.log('Ingreso correcto');
+    };
+});
+
 // Register
-app.post('access',(req,res)=>{
+app.post('/logon',(req,res)=>{
 
     const{nameUser, password, email, name} = req.body;
 
@@ -75,7 +137,7 @@ app.post('access',(req,res)=>{
         let validate= 'Ingrese los datos Requeridos';
 
         res.render('access', {
-            titulo: 'Nuevo Usuario',
+            titulo: 'Registro Fallido',
             validate
         })
     }
@@ -95,14 +157,92 @@ app.post('access',(req,res)=>{
 
         let sql= 'INSERT INTO usuario set ?';
 
-        conection.query(sql, data, (error, result) =>{
+        connection.query(sql, data, (error, result) =>{
             if(error) throw error;
-            res.render('usuario', {
-            titulo: 'Registro Exitoso',
+            res.render('user', {
+            titulo: 'Usuario Creado',
             });
         })
 
     };
+});
+
+app.get('/user', (req,res)=>{
+    let sql= 'SELECT * FROM usuario';
+
+    connection.query(sql, (error, result)=>{
+        if(error) throw error;
+        console.log(result);
+        res.render('user', {
+            result: result,
+        })
+        
+    })
+});
+
+// Contact
+app.post('/contact',(req,res)=>{
+
+    const{id, name, email, tel, subject, message} = req.body;
+
+    if(email == '' || message == ''){
+        let validate= 'Por favor complete el mensaje';
+
+        res.render('main', {
+            titulo: 'Mensaje no enviado',
+            validate
+        })
+    }
+    else{
+        console.log(name);
+        console.log(email);
+        console.log(tel);
+        console.log(subject);
+        console.log(message);
+
+        // Insert DB
+        let data= {
+            id: id,
+            name: name,
+            email: email,
+            tel: tel,
+            subject: subject,
+            message: message
+        };
+
+        let sql= 'INSERT INTO mensaje set ?';
+
+        connection.query(sql, data, (error, result) =>{
+            if(error) throw error;
+            res.render('main', {
+            titulo: 'Mensaje Enviado',
+            });
+        })
+    };
+});
+
+app.delete('/delete', (req,res)=>{
+
+    let sql= "DELETE FROM usuario WHERE nameUser='" + req.body.nameUser + "'";
+    connection.query(sql, (error, result) =>{
+        if(error) throw error;
+        res.render('usuario', {
+        titulo: 'Eliminado Exitoso',
+        });
+    });
+});
+
+
+
+app.delete('/delete', (req,res)=>{
+
+    let sql= "DELETE FROM usuario WHERE nameUser='" + req.body.nameUser + "'";
+    connection.query(sql, (error, result) =>{
+        if(error) throw error;
+        res.render('usuario', {
+        titulo: 'Eliminado Exitoso',
+        });
+    });
 });
 
 // connection.end();

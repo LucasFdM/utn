@@ -1,0 +1,36 @@
+{{> header}}
+<section>
+    <h1 class="mt-4"><i class="bi bi-user"></i>Usuario</h1>
+    <hr>
+    <h3>Panel de Usuario</h3>
+    <hr>
+    <h5>Editar/Eliminar Cuenta | Solicitar un Servicio</h5>
+    <br>   
+    <table class="table table-hover table-bordered table-dark" id="userTable">
+        <thead>
+            <tr>
+                <th scope="col">Usuario</th>
+                <th scope="col">Contraseña</th>
+                <th scope="col">E-Mail</th>
+                <th scope="col">Name</th>
+                <th scope="col">Pedidos</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each result}}
+            <tr>
+                <th scope="row"> {{this.nameUser}} </th>
+                <td> {{this.password}} </td>
+                <td> {{this.email}} </td>
+                <td> {{this.name}} </td>
+                <td> {{this.pedidoServicios}} </td>
+                <td> 
+                    <a href="javascript:void(0)" class="btn btn-info edit" data-id="{{userNameUser}}">Editar</a>
+                    <a href="javascript:void(0)" class="btn btn-danger delete" data-id="{{userNameUser}}">Borrar</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</section>
