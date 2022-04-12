@@ -4,6 +4,7 @@ console.log('[[[ Sistema Iniciado Correctamente ]]]');
 let num1, num2, r=0, mayor, menor;
 let usuario="administrador", password="1234";
 let flag=false;
+let nombre, telefono;
 
 //Funciones Calculadora
 function iniciar(){
@@ -12,7 +13,6 @@ function iniciar(){
 	console.log(num1);
 	num2=parseFloat(prompt("introduzca el 2° numero: "));
 	console.log(num2);
-
 }
 
 function sum(){
@@ -82,4 +82,11 @@ function Login(){
 		}
 	}
 	flag=false;	
+}
+
+function Contratar(){
+	console.log('Contrato Solicitado');
+	nombre=(prompt("Ingrese su Nombre: "));
+	telefono=parseInt(prompt("Introduzca un Telefono de contacto: "));
+	console.log('Solicitud de: ' +nombre+ '. Contactar al Tel: ' +telefono);
 }

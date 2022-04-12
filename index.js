@@ -3,6 +3,53 @@ const app = express();
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 
+// Routes
+app.use(express.static(__dirname + "/public"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
+// Handlebars Settings
+app.set("view engine","hbs");
+app.engine('hbs', exphbs.engine({
+    extname: 'hbs',
+    defaultLayout: 'index',
+    layoutsDir: __dirname + '/views/layouts',
+    partialsDir: __dirname + '/views/partials',
+}));
+
+const port = 8900;
+app.listen(port);
+console.log(`Escuchando al servidor: http://localhost:${port}`);
+
+// Landing Page
+app.get('/', (req,res)=>{
+    res.render("main");
+})
+
+app.get('/index', (req,res)=>{
+    res.render("main");
+})
+
+app.get('/maths', (req,res)=>{
+    res.render("maths");
+})
+
+app.get('/data', (req,res)=>{
+    res.render("data");
+})
+
+app.get('/access', (req,res)=>{
+    res.render("access");
+})
+
+app.get('/prices', (req,res)=>{
+    res.render("prices");
+})
+
+app.get('*', (req,res)=>{
+    res.render("404");
+})
+
 // Database
 var mysql= require('mysql2');
 const res = require('express/lib/response');
@@ -60,53 +107,7 @@ app.post('access',(req,res)=>{
 
 // connection.end();
 
-// Routes
-app.use(express.static(__dirname + "/public"));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-
-// Handlebars Settings
-app.set("view engine","hbs");
-app.engine('hbs', exphbs.engine({
-    extname: 'hbs',
-    defaultLayout: 'index',
-    layoutsDir: __dirname + '/views/layouts',
-    partialsDir: __dirname + '/views/partials',
-}));
-
-const port = 8900;
-app.listen(port);
-console.log(`Escuchando al servidor: http://localhost:${port}`);
-
-// Landing Page
-app.get('/', (req,res)=>{
-    res.render("main");
-})
-
-app.get('/index', (req,res)=>{
-    res.render("main");
-})
-
-app.get('/maths', (req,res)=>{
-    res.render("maths");
-})
-
-app.get('/data', (req,res)=>{
-    res.render("data");
-})
-
-app.get('/access', (req,res)=>{
-    res.render("access");
-})
-
-app.get('/prices', (req,res)=>{
-    res.render("prices");
-})
-
-app.get('*', (req,res)=>{
-    res.render("404");
-})
-
+// Contact Form
 app.post('#contacto', (req, res)=>{
     const{nombre, email, telefono, motivo, mensaje}= req.body;
     if(nombre == '' || email == ''){
@@ -126,4 +127,30 @@ app.post('#contacto', (req, res)=>{
             titulo: 'Mensaje enviado',
         });  
     }
+});
+
+app.post('#servicio', (req, res)=>{
+    const{name, description, price}= req.body;
+    if(name == '' || price == ''){
+        let validate='Completar campos faltantes';
+        res.render('#servicio', {
+            titulo: 'Servicios',
+            validate
+        });
+    }
+    else{
+        console.log(name);
+        console.log(description);
+        console.log(price);
+        res.render('index', {
+            titulo: 'Servicio Agegado',
+        });  
+    }
+});
+
+app.post('/update', (req,res) =>{
+
+    let sql= "UPDATE servicio SET name= '" + req.body.name +
+    "', description= '" + req.body.description + "', price= " + req.body.price +
+    " WHERE id= " + req.body.id;
 });

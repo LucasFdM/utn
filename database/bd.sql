@@ -1,19 +1,28 @@
 CREATE DATABASE utn;
 
-CREATE TABLE usuario(
-    nameUser varchar(50) primary key,
-    password varchar(20),
-    email varchar(100),
-    nombre varchar (100),
-    pedidoServicios integer,
-    foreign key (pedidoServicios) references servicio(id),
-);
+USE utn;
 
 CREATE TABLE servicio(
     id integer primary key,
-    nombre varchar(100),
-    descripcion varchar(250),
-    precio float,
+    name varchar(100),
+    description varchar(250),
+    price float
+);
+
+CREATE TABLE usuario(
+    nameUser varchar(50) primary key,
+    password varchar(20) not null,
+    email varchar(100) not null,
+    name varchar (100),
+    pedidoServicios integer,
+    foreign key (pedidoServicios) references servicio(id)
+);
+
+CREATE TABLE lenguaje(
+    name varchar(25) primary key,
+    description varchar(250) not null,
+    idServicios integer,
+    foreign key (idServicios) references servicio(id)
 );
 
 
