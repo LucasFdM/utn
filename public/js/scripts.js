@@ -7,6 +7,7 @@ let flag=false;
 
 //Funciones Calculadora
 function iniciar(){
+	console.log('[ Iniciando Calculadora ]');
 	num1=parseFloat(prompt("introduzca el 1° numero: "));
 	console.log(num1);
 	num2=parseFloat(prompt("introduzca el 2° numero: "));
@@ -39,29 +40,9 @@ function div(){
 	
 }
 
-//Fucion Login
-function Login(){
-	console.log('Iniciando Login');
-	while(flag==false){
-		let user=prompt("Introduzca su Usuario: ");
-		let pass=prompt("Introduzca su Contraseña: ");
-		if(user==usuario && pass==password){
-			console.log('Usuario y Contraseña correctos');
-			alert("¡Login Correcto! Bienvenido.");
-			flag=true;
-			window.open(maths);
-		} 
-		else{
-			alert("¡Usuario o Contraseña incorrectos! Intente nuevamente...");
-			console.log('Error en Usuario o Contraseña');
-		}
-	}
-	flag=false;	
-}
-
 //Funcion Mayor y Menor
 function Calculo(){
-	console.log('Iniciando Calculo de Mayor/Menor');
+	console.log('[ Iniciando Calculo de Mayor/Menor ]');
 	while(flag==false){
 		let n1=parseFloat(prompt("Ingrese un número: "));
 		let n2=parseFloat(prompt("Ingrese otro número: "));
@@ -83,3 +64,22 @@ function Contacto(){
 	console.log('Mensaje recibido');
 }
 
+//Funcion Login Administrador
+function Login(){
+	console.log('Iniciando Login');
+	while(flag==false){
+		let user=prompt("Introduzca su Usuario: ");
+		let pass=prompt("Introduzca su Contraseña: ");
+		if(user==usuario && pass==password){
+			console.log('Usuario y Contraseña correctos');
+			alert("¡Login Correcto! Bienvenido.");
+			flag=true;
+			window.open('maths');
+		} 
+		else{
+			alert("¡Usuario o Contraseña incorrectos! Intente nuevamente...");
+			console.log('Error en Usuario o Contraseña');
+		}
+	}
+	flag=false;	
+}

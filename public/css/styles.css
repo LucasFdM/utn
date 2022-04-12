@@ -45,17 +45,14 @@
     }
 }
 
-ul>li{
-    text-decoration: none;
+ul li{
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
 }
 
 #boton{
     margin: 200px 0;
-}
-
-#acceso{
-    background-image: url(/public/images/bg.jpg);
-    background-size: cover;
 }
 
 /* Footer */
@@ -69,6 +66,57 @@ footer{
 /* ----------------------------------------------------------------
 	Footer
 -----------------------------------------------------------------*/
+.dark {
+    color: #EEE;
+    background-color: #383838;
+}
+
+.dark .social-icon {
+	color: #EEE;
+	border-color: #AAA;
+}
+
+.dark .si-dark {
+	background-color: rgba(0,0,0,0.2);
+	color: #FFF !important;
+	border-color: transparent;
+}
+
+.dark #footer,
+#footer.dark {
+	color: rgba(255,255,255,0.75);
+	background-color: #282828;
+	border-top-color: rgba(255,255,255,0.15);
+}
+
+.dark .footer-widgets-wrap a {
+	color: rgba(255,255,255,0.75);
+}
+
+.dark .footer-widgets-wrap a:hover {
+	color: rgba(255,255,255,0.85);
+}
+
+.dark #footer .social-icon.si-borderless,
+#footer.dark .social-icon.si-borderless {
+	color: rgba(255,255,255,0.5) !important;
+}
+
+.dark #copyrights,
+#copyrights.dark {
+	color: rgba(255,255,255,0.4);
+	background-color: rgba(0,0,0,0.2);
+}
+
+.dark .copyright-links a {
+	color: rgba(255,255,255,0.4);
+	border-bottom-color: rgba(255,255,255,0.65);
+}
+
+.dark .copyright-links a:hover {
+	color: rgba(255,255,255,0.6);
+	border-bottom-color: rgba(255,255,255,0.7);
+}
 
 
 #footer {
@@ -136,11 +184,6 @@ footer{
 
 #copyrights.text-right a:last-child { margin-right: 0; }
 
-.footer-logo {
-	display: block;
-	margin-bottom: 30px;
-}
-
 .social-icon {
 	margin: 0 5px 5px 0;
 	width: 40px;
@@ -166,34 +209,9 @@ footer{
 	font-style: normal;
 }
 
-body:not(.device-touch) .social-icon {
-	-webkit-transition: all .3s ease;
-	-o-transition: all .3s ease;
-	transition: all .3s ease;
-}
-
-.d-flex > .social-icon,
-.d-sm-flex > .social-icon,
-.d-md-flex > .social-icon,
-.d-lg-flex > .social-icon,
-.d-xl-flex > .social-icon {
-	float: none;
-	margin-bottom: 0px;
-}
-
-
-/* Social Icons - Rounded
------------------------------------------------------------------*/
-
 .si-rounded { border-radius: 50%; }
 
-/* Social Icons - Borderless
------------------------------------------------------------------*/
-
 .si-borderless { border-color: transparent !important; }
-
-/* Social Icons - Dark
------------------------------------------------------------------*/
 
 .si-dark {
 	background-color: #444;
@@ -201,35 +219,9 @@ body:not(.device-touch) .social-icon {
 	border-color: transparent;
 }
 
-/* Social Icons - Light
------------------------------------------------------------------*/
-
-.si-light {
-	background-color: rgba(0,0,0,0.05);
-	color: #666 !important;
-	border-color: transparent;
-}
-
-/* Social Icons - Colored
------------------------------------------------------------------*/
-
 .si-colored { border-color: transparent !important; }
 
 .si-colored i { color: #FFF; }
-
-/* Social Icons - Large
------------------------------------------------------------------*/
-
-.social-icon.si-large {
-	margin: 0 10px 10px 0;
-	width: 56px;
-	height: 56px;
-	font-size: 30px;
-	line-height: 54px !important;
-}
-
-/* Social Icons - Small
------------------------------------------------------------------*/
 
 .social-icon.si-small {
 	width: 32px;
@@ -241,10 +233,7 @@ body:not(.device-touch) .social-icon {
 .social-icon i {
 	display: block;
 	position: relative;
-}
-
-body:not(.device-touch) .social-icon i {
-	-webkit-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
 	-o-transition: all .3s ease;
 	transition: all .3s ease;
 }
@@ -264,9 +253,6 @@ body:not(.device-touch) .social-icon i {
 
 .si-colored.social-icon { border-color: transparent; }
 
-/* Social Icons - Sticky
------------------------------------------------------------------*/
-
 .si-sticky {
 	position: fixed;
 	top: 50%;
@@ -276,28 +262,9 @@ body:not(.device-touch) .social-icon i {
 	transform: translateY(-50%);
 }
 
-/* Social Icons - Sticky Right
------------------------------------------------------------------*/
-
-.si-sticky.si-sticky-right {
-	left: auto;
-	right: 8px;
-}
-
-/* Social Icons - Share
------------------------------------------------------------------*/
-
 .si-share {
 	position: relative;
 	padding-left: 5px;
-	border-top: 1px solid #EEE;
-	border-bottom: 1px solid #EEE;
-}
-
-.si-share span {
-	line-height: 36px;
-	font-weight: bold;
-	font-size: 13px;
 }
 
 .si-share .social-icon {
@@ -306,39 +273,13 @@ body:not(.device-touch) .social-icon i {
 	font-size: 15px;
 }
 
-.si-call:hover,
-.si-colored.si-call { background-color: #444 !important; }
 .si-linkedin:hover,
 .si-colored.si-linkedin { background-color: #0E76A8 !important; }
-.si-skype:hover,
-.si-colored.si-skype { background-color: #00AFF0 !important; }
-.si-twitter:hover,
-.si-colored.si-twitter { background-color: #00ACEE !important; }
-.si-youtube:hover,
-.si-colored.si-youtube { background-color: #C4302B !important; }
-.si-email3:hover,
-.si-colored.si-email3 { background-color: #6567A5 !important; }
 .si-github:hover,
 .si-colored.si-github { background-color: #171515 !important; }
-.si-bitbucket:hover,
-.si-colored.si-bitbucket { background-color: #0E4984 !important; }
-.si-stackoverflow:hover,
-.si-colored.si-stackoverflow { background-color: #EF8236 !important; }
-.si-instagram:hover,
-.si-colored.si-instagram { background-color: #8A3AB9 !important; }
-
-/* Social Icons Text Color
------------------------------------------------------------------*/
-
-.si-text-color.si-call i { color: #444; }
-.si-text-color.si-linkedin i { color: #0E76A8; }
-.si-text-color.si-skype i { color: #00AFF0; }
-.si-text-color.si-twitter i { color: #00ACEE; }
-.si-text-color.si-youtube i { color: #C4302B; }
-.si-text-color.si-email3 i { color: #6567A5; }
-.si-text-color.si-github i { color: #171515; }
-.si-text-color.si-bitbucket i { color: #0E4984; }
-.si-text-color.si-stackoverflow i { color: #EF8236; }
-.si-text-color.si-instagram i { color: #8A3AB9; }
-
-.si-text-color:hover { color: #FFF; }
+.si-twitter:hover,
+.si-colored.si-twitter { background-color: #00ACEE !important; }
+.si-skype:hover,
+.si-colored.si-skype { background-color: #00AFF0 !important; }
+.si-email3:hover,
+.si-colored.si-email3 { background-color: #6567A5 !important; }

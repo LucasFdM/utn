@@ -99,10 +99,6 @@ app.get('/access', (req,res)=>{
     res.render("access");
 })
 
-app.get('/login', (req,res)=>{
-    res.render("login");
-})
-
 app.get('/prices', (req,res)=>{
     res.render("prices");
 })
@@ -111,3 +107,23 @@ app.get('*', (req,res)=>{
     res.render("404");
 })
 
+app.post('#contacto', (req, res)=>{
+    const{nombre, email, telefono, motivo, mensaje}= req.body;
+    if(nombre == '' || email == ''){
+        let validate='Completar campos faltantes';
+        res.render('#contacto', {
+            titulo: 'Contactame',
+            validate
+        });
+    }
+    else{
+        console.log(nombre);
+        console.log(email);
+        console.log(telefono);
+        console.log(motivo);
+        console.log(mensaje);
+        res.render('index', {
+            titulo: 'Mensaje enviado',
+        });  
+    }
+});
