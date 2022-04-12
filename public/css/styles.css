@@ -1,0 +1,344 @@
+/* 404 */
+.error-page {
+    margin: 150px auto;
+    width: 600px;
+}
+
+@media (max-width: 767.98px) {
+    .error-page {
+        width: 100%;
+    }
+}
+
+.error-page>.headline {
+    float: left;
+    font-size: 100px;
+    font-weight: 500;
+}
+
+@media (max-width: 767.98px) {
+    .error-page>.headline {
+        float: none;
+        text-align: center;
+    }
+}
+
+.error-page>.error-content {
+    display: block;
+    margin-left: 190px;
+    text-align: center;
+}
+
+@media (max-width: 767.98px) {
+    .error-page>.error-content {
+        margin-left: 0;
+    }
+}
+
+.error-page>.error-content>h1 {
+    font-size: 25px;
+}
+
+@media (max-width: 767.98px) {
+    .error-page>.error-content>h1 {
+        text-align: center;
+    }
+}
+
+ul>li{
+    text-decoration: none;
+}
+
+#boton{
+    margin: 200px 0;
+}
+
+#acceso{
+    background-image: url(/public/images/bg.jpg);
+    background-size: cover;
+}
+
+/* Footer */
+footer{
+    position: relative;
+    display: block;
+    bottom: 0;
+    width: 100%;
+}
+
+/* ----------------------------------------------------------------
+	Footer
+-----------------------------------------------------------------*/
+
+
+#footer {
+	position: relative;
+	background-color: #EEE;
+	border-top: 5px solid rgba(0,0,0,0.2);
+}
+
+@media (min-width: 992px) {
+	.sticky-footer #slider:not(.slider-parallax-invisible),
+	.sticky-footer #page-submenu,
+	.sticky-footer #page-title,
+	.sticky-footer #content { z-index: 2; }
+
+	.sticky-footer #footer {
+		position: sticky;
+		top: auto;
+		bottom: 0;
+		left: 0;
+	}
+}
+
+#footer .footer-widgets-wrap {
+	position: relative;
+	padding: 80px 0;
+}
+
+#copyrights {
+	padding: 40px 0;
+	background-color: #DDD;
+	font-size: 0.875rem;
+	line-height: 1.8;
+}
+
+#copyrights i.footer-icon {
+	position: relative;
+	top: 1px;
+	font-size: 0.875rem;
+	width: 14px;
+	text-align: center;
+	margin-right: 3px;
+}
+
+.copyright-links a {
+	display: inline-block;
+	margin: 0 3px;
+	color: #333;
+	border-bottom: 1px dotted #444;
+}
+
+.copyright-links a:hover {
+	color: #555;
+	border-bottom: 1px solid #666;
+}
+
+.copyrights-menu { margin-bottom: 10px; }
+
+.copyrights-menu a {
+	font-size: 0.875rem;
+	margin: 0 10px;
+	border-bottom: 0 !important;
+}
+
+#copyrights a:first-child { margin-left: 0; }
+
+#copyrights.text-right a:last-child { margin-right: 0; }
+
+.footer-logo {
+	display: block;
+	margin-bottom: 30px;
+}
+
+.social-icon {
+	margin: 0 5px 5px 0;
+	width: 40px;
+	height: 40px;
+	font-size: 1.25rem;
+	line-height: 38px !important;
+	color: #555;
+	text-shadow: none;
+	border: 1px solid #AAA;
+	border-radius: 3px;
+	overflow: hidden;
+}
+
+.social-icon {
+	display: block;
+	float: left;
+	margin: 4px 11px 7px 0;
+	text-align: center !important;
+	font-size: 28px;
+	color: #FFF;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	cursor: pointer;
+	font-style: normal;
+}
+
+body:not(.device-touch) .social-icon {
+	-webkit-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+.d-flex > .social-icon,
+.d-sm-flex > .social-icon,
+.d-md-flex > .social-icon,
+.d-lg-flex > .social-icon,
+.d-xl-flex > .social-icon {
+	float: none;
+	margin-bottom: 0px;
+}
+
+
+/* Social Icons - Rounded
+-----------------------------------------------------------------*/
+
+.si-rounded { border-radius: 50%; }
+
+/* Social Icons - Borderless
+-----------------------------------------------------------------*/
+
+.si-borderless { border-color: transparent !important; }
+
+/* Social Icons - Dark
+-----------------------------------------------------------------*/
+
+.si-dark {
+	background-color: #444;
+	color: #FFF !important;
+	border-color: transparent;
+}
+
+/* Social Icons - Light
+-----------------------------------------------------------------*/
+
+.si-light {
+	background-color: rgba(0,0,0,0.05);
+	color: #666 !important;
+	border-color: transparent;
+}
+
+/* Social Icons - Colored
+-----------------------------------------------------------------*/
+
+.si-colored { border-color: transparent !important; }
+
+.si-colored i { color: #FFF; }
+
+/* Social Icons - Large
+-----------------------------------------------------------------*/
+
+.social-icon.si-large {
+	margin: 0 10px 10px 0;
+	width: 56px;
+	height: 56px;
+	font-size: 30px;
+	line-height: 54px !important;
+}
+
+/* Social Icons - Small
+-----------------------------------------------------------------*/
+
+.social-icon.si-small {
+	width: 32px;
+	height: 32px;
+	font-size: 0.875rem;
+	line-height: 30px !important;
+}
+
+.social-icon i {
+	display: block;
+	position: relative;
+}
+
+body:not(.device-touch) .social-icon i {
+	-webkit-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+.social-icon i:last-child { color: #FFF !important; }
+
+.social-icon:hover i:first-child { margin-top: -38px; }
+
+.social-icon.si-large:hover i:first-child { margin-top: -54px; }
+
+.social-icon.si-small:hover i:first-child { margin-top: -30px; }
+
+.social-icon:hover {
+	color: #555;
+	border-color: transparent;
+}
+
+.si-colored.social-icon { border-color: transparent; }
+
+/* Social Icons - Sticky
+-----------------------------------------------------------------*/
+
+.si-sticky {
+	position: fixed;
+	top: 50%;
+	left: 5px;
+	width: 36px;
+	z-index: 499;
+	transform: translateY(-50%);
+}
+
+/* Social Icons - Sticky Right
+-----------------------------------------------------------------*/
+
+.si-sticky.si-sticky-right {
+	left: auto;
+	right: 8px;
+}
+
+/* Social Icons - Share
+-----------------------------------------------------------------*/
+
+.si-share {
+	position: relative;
+	padding-left: 5px;
+	border-top: 1px solid #EEE;
+	border-bottom: 1px solid #EEE;
+}
+
+.si-share span {
+	line-height: 36px;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.si-share .social-icon {
+	margin: -1px 0;
+	border-radius: 0;
+	font-size: 15px;
+}
+
+.si-call:hover,
+.si-colored.si-call { background-color: #444 !important; }
+.si-linkedin:hover,
+.si-colored.si-linkedin { background-color: #0E76A8 !important; }
+.si-skype:hover,
+.si-colored.si-skype { background-color: #00AFF0 !important; }
+.si-twitter:hover,
+.si-colored.si-twitter { background-color: #00ACEE !important; }
+.si-youtube:hover,
+.si-colored.si-youtube { background-color: #C4302B !important; }
+.si-email3:hover,
+.si-colored.si-email3 { background-color: #6567A5 !important; }
+.si-github:hover,
+.si-colored.si-github { background-color: #171515 !important; }
+.si-bitbucket:hover,
+.si-colored.si-bitbucket { background-color: #0E4984 !important; }
+.si-stackoverflow:hover,
+.si-colored.si-stackoverflow { background-color: #EF8236 !important; }
+.si-instagram:hover,
+.si-colored.si-instagram { background-color: #8A3AB9 !important; }
+
+/* Social Icons Text Color
+-----------------------------------------------------------------*/
+
+.si-text-color.si-call i { color: #444; }
+.si-text-color.si-linkedin i { color: #0E76A8; }
+.si-text-color.si-skype i { color: #00AFF0; }
+.si-text-color.si-twitter i { color: #00ACEE; }
+.si-text-color.si-youtube i { color: #C4302B; }
+.si-text-color.si-email3 i { color: #6567A5; }
+.si-text-color.si-github i { color: #171515; }
+.si-text-color.si-bitbucket i { color: #0E4984; }
+.si-text-color.si-stackoverflow i { color: #EF8236; }
+.si-text-color.si-instagram i { color: #8A3AB9; }
+
+.si-text-color:hover { color: #FFF; }

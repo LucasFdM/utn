@@ -20,7 +20,8 @@ app.get('/home', (req, res) => {
     res.render('index', (titulo))
 });
 
-
+let hoy= new Date();
+console.log('Hoy es '+ hoy);
 
 /*
 //POST

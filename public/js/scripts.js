@@ -46,12 +46,14 @@ function Login(){
 		let user=prompt("Introduzca su Usuario: ");
 		let pass=prompt("Introduzca su Contraseña: ");
 		if(user==usuario && pass==password){
+			console.log('Usuario y Contraseña correctos');
 			alert("¡Login Correcto! Bienvenido.");
 			flag=true;
-			window.open('./ejercicio2.html');
+			window.open(maths);
 		} 
 		else{
 			alert("¡Usuario o Contraseña incorrectos! Intente nuevamente...");
+			console.log('Error en Usuario o Contraseña');
 		}
 	}
 	flag=false;	
@@ -80,3 +82,4 @@ function Contacto(){
 	alert("Muchas gracias por contactarte. Responderé a la brevedad.");
 	console.log('Mensaje recibido');
 }
+
