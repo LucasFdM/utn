@@ -56,39 +56,21 @@ app.get('/access', (req,res)=>{
     });
 })
 
-app.get('/admin', (req,res)=>{
-    res.render("admin", {
-        titulo: 'Area Administrador',
-    });
-})
-
-app.get('/user', (req,res)=>{
-    res.render("user", {
-        titulo: 'Area Usuario',
-    });
-})
-
 app.get('/logon', (req,res)=>{
-    res.render("user", {
-        titulo: 'Area Usuario',
+    res.render("profile", {
+        titulo: 'Area Usuario'
     });
 })
 
 app.get('/login', (req,res)=>{
-    res.render("user", {
-        titulo: 'Area Usuario',
+    res.render("profile", {
+        titulo: 'Area Usuario'
     });
 })
 
 app.get('/contact', (req,res)=>{
     res.render("main", {
-        titulo: 'Programacion Webon',
-    });
-})
-
-app.get('*', (req,res)=>{
-    res.render("404", {
-        titulo: 'ERROR',
+        titulo: 'Programacion Web',
     });
 })
 
@@ -122,7 +104,7 @@ app.post('/login',(req,res)=>{
         })
     }
     else{
-        res.render('user', {
+        res.render('profile', {
         });
         console.log('Ingreso correcto');
     };
@@ -159,7 +141,7 @@ app.post('/logon',(req,res)=>{
 
         connection.query(sql, data, (error, result) =>{
             if(error) throw error;
-            res.render('user', {
+            res.render('profile', {
             titulo: 'Usuario Creado',
             });
         })
@@ -167,17 +149,38 @@ app.post('/logon',(req,res)=>{
     };
 });
 
+app.get('/profile', (req,res)=>{
+    res.render("profile", {
+        titulo: 'Mi Perfil',
+    });
+})
+
 app.get('/user', (req,res)=>{
     let sql= 'SELECT * FROM usuario';
-
     connection.query(sql, (error, result)=>{
-        if(error) throw error;
-        console.log(result);
+        if(error){
+            console.log(error);
+            throw error
+        }
         res.render('user', {
-            result: result,
+            titulo: 'Area Administrador',
+            result: result
         })
-        
-    })
+    });
+});
+
+app.get('/message', (req,res)=>{
+    let sql= 'SELECT * FROM mensaje';
+    connection.query(sql, (error, result)=>{
+        if(error){
+            console.log(error);
+            throw error
+        }
+        res.render('message', {
+            titulo: 'Area Administrador',
+            result: result
+        })
+    });
 });
 
 // Contact
@@ -231,8 +234,6 @@ app.delete('/delete', (req,res)=>{
         });
     });
 });
-
-
 
 app.delete('/delete', (req,res)=>{
 
@@ -288,9 +289,66 @@ app.post('#servicio', (req, res)=>{
     }
 });
 
+// Services
+app.get('/services', (req,res)=>{
+    let sql= 'SELECT * FROM servicio';
+    connection.query(sql, (error, result)=>{
+        if(error){
+            console.log(error);
+            throw error
+        }
+        res.render('services', {
+            titulo: 'Servicios',
+            result: result
+        })
+    });
+});
+
+app.post('/services',(req,res)=>{
+
+    const{id, name, description, price} = req.body;
+
+    if(name == '' || price == ''){
+        let validate= 'Ingrese los datos Requeridos';
+
+        res.render('services', {
+            titulo: 'Registro Fallido',
+            validate
+        })
+    }
+    else{
+        console.log(name);
+        console.log(description);
+        console.log(price);
+        
+        // Insert DB
+        let data= {
+            id: id,
+            name: name,
+            description: description,
+            price: price
+        };
+
+        let sql= 'INSERT INTO servicio set ?';
+
+        connection.query(sql, data, (error, result) =>{
+            if(error) throw error;
+            res.render('services', {
+            titulo: 'Servicios',
+            });
+        })
+    };
+});
+
 app.post('/update', (req,res) =>{
 
     let sql= "UPDATE servicio SET name= '" + req.body.name +
     "', description= '" + req.body.description + "', price= " + req.body.price +
     " WHERE id= " + req.body.id;
+});
+
+app.get('*', (req,res)=>{
+    res.render("404", {
+        titulo: 'ERROR 404',
+    });
 });

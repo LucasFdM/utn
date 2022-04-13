@@ -69,7 +69,7 @@ function Login(){
 			console.log('Usuario y Contraseña correctos');
 			alert("¡Login Correcto! Bienvenido.");
 			flag=true;
-			window.open('admin');
+			window.open('user');
 		} 
 		else{
 			alert("¡Usuario o Contraseña incorrectos! Intente nuevamente...");

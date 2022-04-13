@@ -1,0 +1,84 @@
+{{> header3}}
+<section>
+    <h1 class="mt-4"><i class="bi bi-user"></i>Administrador</h1>
+    <hr>
+    <br>
+    <h3>Panel de Servicios</h3>
+    <hr>
+    <h5>Crear Servicio</h5>
+    <br>
+    <button type="button" class="btn btn-success btn-block btn-lg" data-toggle="modal" data-target="#modal3">
+        Nuevo Servicio
+    </button>
+    <div class="modal fade" id="modal3" tabindex="-1" role="dialog"
+        aria-labelledby="modal3Title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal1LongTitle">Nuevo Servicio</h5>
+                    <button type="button" class="close" data-dismiss="modal3" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="services" class="form-signin" method="post">
+                        <label for="inputName">Nombre del Servicio</label>
+                        <input type="text" id="inputName" name="name" class="form-control" required autofocus>
+                        <label for="inputDescription">Descripcion</label>
+                        <input type="textarea" id="inputDescription" name="description" class="form-control" required>
+                        <label for="inputPrice">Precio</label>
+                        <input type="number" id="inputPrice" name="price" class="form-control" required>
+                        <br>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Cargar</button>
+                    </form>
+                    <div class="text-center validate">
+                        <h2 class="text-danger">
+                            {{validate}}
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <h5>Servicios Activos</h5>
+    <hr>
+    <br>
+    <table class="table table-hover table-bordered table-dark" id="servicesTable">
+        <thead>
+            <tr>
+                <th scope="col">N°</th>
+                <th scope="col">Servicio</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each result}}
+            <tr>
+                <th scope="row"> {{id}} </th>
+                <td> {{name}} </td>
+                <td> {{description}} </td>
+                <td> {{price}} </td>
+                <td> 
+                    <a href="javascript:void(0)" class="btn btn-danger delete" data-id="{{mensajeId}}">Desactivar</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</section>
+
+{{>scripts}}
+
+<script>
+    $('#modal3').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget)
+        var recipient = button.data('whatever')
+        var modal = $(this)
+        modal.find('.modal-title').text('Cargar Nuevo Servicio')
+        modal.find('.modal-body input').val(recipient)
+    })
+</script>

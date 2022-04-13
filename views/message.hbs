@@ -1,12 +1,12 @@
-{{> header}}
+{{> header3}}
 <section>
     <h1 class="mt-4"><i class="bi bi-user"></i>Administrador</h1>
     <hr>
     <h3>Panel de Administración</h3>
     <hr>
-    <h5>Gestión de Mensajes, Usuarios y Servicios</h5>
-    <br>   
-    <table class="table table-hover table-bordered table-dark" id="msjTable">
+    <h5>Buzón de Mensajes</h5>
+    <br> 
+    <table class="table table-hover table-bordered table-light" id="msjTable">
         <thead>
             <tr>
                 <th scope="col">N°</th>
@@ -19,14 +19,14 @@
             </tr>
         </thead>
         <tbody>
-            {{#each results}}
+            {{#each result}}
             <tr>
-                <th scope="row"> {{mensajeId}} </th>
-                <td> {{mensajeName}} </td>
-                <td> {{mensajeEmail}} </td>
-                <td> {{mensajeTel}} </td>
-                <td> {{mensajeSubject}} </td>
-                <td> {{mensajeMessage}} </td>
+                <th scope="row"> {{id}} </th>
+                <td> {{name}} </td>
+                <td> {{email}} </td>
+                <td> {{tel}} </td>
+                <td> {{subject}} </td>
+                <td> {{message}} </td>
                 <td> 
                     <a href="javascript:void(0)" class="btn btn-danger delete" data-id="{{mensajeId}}">Borrar</a>
                 </td>
