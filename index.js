@@ -75,20 +75,20 @@ app.get('/contact', (req,res)=>{
 })
 
 // Database
-var mysql= require('mysql2');
-const res = require('express/lib/response');
-var connection= mysql.createConnection({
-    host: 'localhost',
-    port: 3306,
-    user: 'root',
-    password: '',
-    database: 'utn'
-});
+// var mysql= require('mysql2');
+// const res = require('express/lib/response');
+// var connection= mysql.createConnection({
+//     host: 'localhost',
+//     port: 3306,
+//     user: 'root',
+//     password: '',
+//     database: 'utn'
+// });
 
-connection.connect((error) =>{
-    if(error) throw error;
-    console.log('Conexion a la DB exitosa');
-});
+// connection.connect((error) =>{
+//     if(error) throw error;
+//     console.log('Conexion a la DB exitosa');
+// });
 
 // LogIn
 app.post('/login',(req,res)=>{
